@@ -125,3 +125,28 @@ function cars(make, model, year, color) {
           car1.accelerate()
           console.log(car1.getSpeed());
         }
+
+        // Car speed decelerates to half the speed (using Math.random)
+        function cars(make, model, year, color) {
+          var speed = 40;
+            return {
+              make: make,
+              model: model,
+              year: year,
+              color: color,
+              getCar:function() {return this.make + " " + this.model + " " + this.year + " " + this.color},
+              getSpeed: function() { return speed; },
+              accelerate: function() { speed += 10; },
+              brake: function() {
+                if (speed = Math.floor(Math.random()*(speed/2+1))) { //Decreases speed down to zero.
+                  speed - 10;
+                }
+              }
+            };
+          }
+
+          var car1 = cars("Volkswagon", "Jetta", "1997", "Black");
+          while (car1.getSpeed() > 0){
+            car1.brake()
+            console.log(car1.getSpeed());
+          }
